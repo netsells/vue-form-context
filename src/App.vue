@@ -2,11 +2,21 @@
     <div id="app">
         <pre>{{ formData }}</pre>
 
-        <form-context v-model="formData">
+        <form-context
+            v-model="formData"
+            :states="{
+                errors: {
+                    foo: 'Error',
+                },
+            }"
+        >
 
             <form-value path="foo">
-                <template v-slot="{ value }">
+                <template v-slot="{ value, states: { errors } }">
                     <input v-model="value.model" />
+                    <p v-if="errors.foo">
+                        {{ errors.foo }}
+                    </p>
                 </template>
             </form-value>
 

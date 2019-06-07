@@ -1,6 +1,6 @@
 <template>
     <div>
-        <slot :value="value" />
+        <slot :value="value" :states="states" />
     </div>
 </template>
 
@@ -19,6 +19,7 @@
 
         inject: [
             'formData',
+            'states',
             'setFormData',
         ],
 
