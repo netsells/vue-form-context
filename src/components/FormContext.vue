@@ -1,6 +1,5 @@
 <template>
     <div>
-        <pre>{{ formData }}</pre>
         <slot />
     </div>
 </template>
@@ -12,34 +11,26 @@
         name: 'form-context',
 
         props: {
-            defaultValue: {
+            value: {
                 type: Object,
-                default() {
-                    return {};
-                },
+                required: true,
             },
-        },
-
-        data() {
-            return {
-                formData: this.defaultValue,
-            };
         },
 
         provide() {
             return {
-                formData: this.formData,
+                formData: this.value,
                 setFormData: this.setFormData,
             };
         },
 
         methods: {
             setFormData(path, value) {
-                const formData = { ...this.formData };
+                const formData = { ...this.value };
 
                 set(formData, path, value);
 
-                this.formData = formData;
+                this.$emit('input', formData);
             },
         },
     };
