@@ -27,11 +27,11 @@
                 const self = this;
 
                 return {
-                    get computed() {
+                    get model() {
                         return get(self.formData, self.path);
                     },
 
-                    set computed(value) {
+                    set model(value) {
                         self.setFormData(self.path, value);
                     },
                 };

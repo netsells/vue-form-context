@@ -6,19 +6,13 @@
 
             <form-value path="foo">
                 <template v-slot="{ value }">
-                    <input v-model="value.computed" />
+                    <input v-model="value.model" />
                 </template>
             </form-value>
 
-            <form-value path="bar">
+            <form-value path="some.path[0]">
                 <template v-slot="{ value }">
-                    <input v-model="value.computed" />
-                </template>
-            </form-value>
-
-            <form-value path="some.path">
-                <template v-slot="{ value }">
-                    <input v-model="value.computed" />
+                    <input v-model="value.model" />
                 </template>
             </form-value>
 
