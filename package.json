@@ -1,5 +1,5 @@
 {
-  "name": "vue-form-context",
+  "name": "@netsells/vue-form-context",
   "version": "0.1.0",
   "private": true,
   "scripts": {
